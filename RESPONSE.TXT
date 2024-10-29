@@ -1,1 +1,2 @@
-test.c
+sample\hello.com
+sample\AUTOEXEC.BAT
