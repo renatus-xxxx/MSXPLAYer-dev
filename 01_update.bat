@@ -1,8 +1,22 @@
 @echo off
 cd /d %~dp0
 
-set "EXE_PATH=C:\Program Files (x86)\ASCII\MSXマガジン永久保存版3\アスキー開発ツールズ(tR).exe"
+set "FILE2SAV_PATH=bin\file2sav\file2sav.exe"
+if not exist "%FILE2SAV_PATH%" (
+  echo "00_setup.bat" を実行してセットアップを行ってください
+  pause
+  exit /b 1
+)
+
+set "SAVLIST_PATH=bin\savlist\savlist.exe"
+if not exist "%SAVLIST_PATH%" (
+  echo "00_setup.bat" を実行してセットアップを行ってください
+  pause
+  exit /b 1
+)
+
 set "SAV_PATH=%userprofile%\AppData\Roaming\MSX Association\MSXPLAYer\アスキー開発ツールズ(tR).sav"
+set "EXE_PATH=C:\Program Files (x86)\ASCII\MSXマガジン永久保存版3\アスキー開発ツールズ(tR).exe"
 
 if exist "%EXE_PATH%" (
   if exist "%SAV_PATH%" (
